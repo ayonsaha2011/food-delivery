@@ -49,6 +49,7 @@ exports.create = function(req, res) {
     }
 
     const _restaurant = req.body;
+    _restaurant._owner = req.user._id;
     _restaurant._meals = _meals;
 
     Restaurant.create(_restaurant, function(err, restaurant) {
